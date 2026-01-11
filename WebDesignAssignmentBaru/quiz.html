@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KiddoPlanet | Quiz</title>
+  <link rel="icon" type="image/x-icon" href="newFavIcon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Audio element -->
+   <audio id="bgMusic" src="quizsound.mpeg" loop></audio>
+   <audio id="correctSound" src="correct-356013.mp3"></audio>
+  <audio id="wrongSound" src="wrong-371146.mp3"></audio>
+  
+
+
+  <!-- Icons  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="quizstyle2.css">
+</head>
+
+<body class="main-bg">
+
+
+
+  <!-- navbar -->
+  <div class="navbar">
+    <div class="logo">KiddoPlanet</div>
+
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">
+        Subjects <i class="fa-solid fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="notes.html">Notes</a>
+        <a href="math.html">Mathematics</a>
+        <a href="science.html">Science</a>
+        <a href="english.html">English</a>
+      </div>
+    </div>
+
+    <a href="quiztry.html">Quiz</a>
+    <a href="worksheets.html">Assessment</a>
+    <a href="AboutUs.html">About Us</a>
+  </div>
+
+  <!-- start screen -->
+  <div class="start-screen" id="startScreen">
+    <h1>Welcome to the Quiz!</h1>
+    <button id="startBtn" class="start-btn">Start Quiz</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz-container" id="quiz-container">
+    <h2 id="quiz-title">Quiz</h2>
+
+    <div id="question">Question</div>
+
+    <div class="options">
+      <button class="option-btn"></button>
+      <button class="option-btn"></button>
+      <button class="option-btn"></button>
+      <button class="option-btn"></button>
+    </div>
+
+    <button id="next-btn" class="next-btn">Next</button>
+
+    <div id="result"></div>
+  </div>
+
+  
+
+  
+  <!-- Background sound-->
+  <script>
+  const music = document.getElementById("bgMusic");
+
+  // When user interacts anywhere, start music once
+  document.addEventListener("click", function startMusicOnce() {
+    music.play().catch(() => {});
+    localStorage.setItem("musicPlaying", "true");
+    document.removeEventListener("click", startMusicOnce);
+  });
+ </script>
+
+  <!-- JS -->
+  <script src="quizz.js"></script>
+</body>
+</html>
+
+
+
